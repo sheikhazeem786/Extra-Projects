@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+    }
+    
+    #window {
+        background-color: grey;
+        width: 200px;
+    }
+    
+    #title-bar {
+        display: flex;
+        /* position: relative; */
+        justify-content: flex-end;
+    }
+    
+    #button1 {
+        margin-right: 10px;
+    }
+    
+    #button2 {
+        margin-right: 5px;
+    }
+    
+    #button3 {
+        margin-right: 5px;
+    }
+    
+    #box {
+        background-color: blueviolet;
+        height: fit-content;
+    }
+    
+    p {
+        margin-bottom: 0px;
+        padding: 5px 15px;
+    }
+</style>
+
+<body>
+    <div id="window">
+        <div id="title-bar">
+            <button id="button1">+</button>
+            <button id="button2">-</button>
+            <button id="button3">x</button>
+        </div>
+        <div id="box">
+            <p>This DIV element does not have a pre-defined width. The width of this DIV element is as wide as the parent element allows it to be (100%). Try resizing the browser window to see that width of this DIV element will grow/shrink along width the
+                resizing. But if you click the "Try it" button, yo will make sure that this DIV element does not exceed 600 pixels in width.</p>
+        </div>
+    </div>
+</body>
+<script>
+    let button1 = document.querySelector("#button1");
+    let button2 = document.querySelector("#button2");
+    let button3 = document.querySelector("#button3");
+    let box = document.querySelector("#box");
+    let win = document.querySelector("#window");
+    button1.addEventListener("click", function(e) {
+        win.style.minWidth = "800px";
+    })
+
+    button2.addEventListener("click", function(e) {
+        box.remove();
+    })
+    button3.addEventListener("click", function(e) {
+        win.remove();
+    })
+</script>
+
+
+</html>
