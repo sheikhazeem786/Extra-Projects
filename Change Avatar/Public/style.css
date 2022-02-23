@@ -1,0 +1,81 @@
+    body {
+        color: white;
+        font-family: 'Luckiest Guy', cursive;
+    }
+    
+    section {
+        background-color: green;
+        height: 100vh;
+    }
+    
+    h1 {
+        position: relative;
+        display: flex;
+        top: 7vh;
+        font-size: 34px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .center-div {
+        top: 19vh;
+        left: 25vw;
+        background-color: grey;
+        display: block;
+        position: absolute;
+        justify-content: center;
+        height: 50vh;
+        width: 50vw;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin-top: 9vh;
+    }
+    
+    .details {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: 4vh;
+        font-size: 3.8vh;
+        text-align: center;
+    }
+    
+    #inputName {
+        background-color: rgb(218, 94, 131);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 4.9vh;
+        color: white;
+        height: 4vh;
+        font-family: 'Luckiest Guy', cursive;
+    }
+    
+    .img-div {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: 11.5vh;
+        align-items: center;
+    }
+    
+    #imgChange {
+        height: 22vh;
+    }
+    
+    .btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        top: 14.5vh;
+        justify-content: center;
+    }
+    
+    button {
+        color: white;
+        background-color: blue;
+        border-radius: 8px;
+        font-size: 3.5vh;
+        font-family: 'Luckiest Guy', cursive;
+        text-align: center;
+    }
