@@ -5,19 +5,21 @@ showNotes();
 let addBtn = document.getElementById('addBtn');
 addBtn.addEventListener("click", function(e) {
     let addTxt = document.getElementById("addTxt");
+    // asuming there may be store notes in local storage, so we will store them in array
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
-    } else {
+    } else { // parse the notes string into JSON
         notesObj = JSON.parse(notes);
     }
     notesObj.push(addTxt.value);
+    // then, update the local storage by converting into string
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addTxt.value = "";
-    console.log(notesObj);
+    // console.log(notesObj);
     showNotes();
 });
-
+// function to show elements from local storage
 function showNotes() {
     let notes = localStorage.getItem("notes");
     if (notes == null) {
@@ -26,6 +28,7 @@ function showNotes() {
         notesObj = JSON.parse(notes);
     }
     let html = "";
+    // forEach in implemented in array
     notesObj.forEach(function(element, index) {
         html += `
             <div class="noteCard card my-2 mx-2" style="width: 18rem;">
@@ -45,8 +48,9 @@ function showNotes() {
     }
 }
 
+// function to delete a note
 function deleteNote(index) {
-    console.log("I am deleting Note", index);
+    // console.log("I am deleting Note", index);
 
     let notes = localStorage.getItem("notes");
     if (notes == null) {
@@ -54,6 +58,7 @@ function deleteNote(index) {
     } else {
         notesObj = JSON.parse(notes);
     }
+    // splice takes first argument as startIndex, and second as no.of elements to remove
     notesObj.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
@@ -61,8 +66,25 @@ function deleteNote(index) {
 
 let search = document.getElementById("searchTxt");
 search.addEventListener("input", function() {
-    let inputVal = search.value;
-    console.log(inputVal);
+    // console.log("Input event fired", inputVal);
+    let inputVal = search.value.toLowerCase();
     let noteCards = document.getElementsByClassName("noteCard");
-    Array.from(noteCards).forEach(function())
+    Array.from(noteCards).forEach(function(element) {
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        if (cardTxt.includes(inputVal)) {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    })
 })
+
+
+
+/*
+Future works:-
+1. Add a title to every note
+2. Marks as important
+3. seperate notes by user
+4. Sync and Host to web server
+*/
